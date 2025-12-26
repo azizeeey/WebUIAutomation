@@ -5,9 +5,9 @@
     "passes": 2,
     "pending": 0,
     "failures": 0,
-    "start": "2025-12-25T14:04:09.805Z",
-    "end": "2025-12-25T14:04:17.568Z",
-    "duration": 7763,
+    "start": "2025-12-26T08:28:48.649Z",
+    "end": "2025-12-26T08:28:56.666Z",
+    "duration": 8017,
     "testsRegistered": 2,
     "passPercent": 100,
     "pendingPercent": 0,
@@ -18,7 +18,7 @@
   },
   "results": [
     {
-      "uuid": "46b8d242-81b0-4c90-8e5c-db345f6dbc93",
+      "uuid": "154e777d-f1c6-4e79-88d5-6782dd170046",
       "title": "",
       "fullFile": "C:\\laragon\\www\\WebUIAutomation\\test\\saucedemo.spec.js",
       "file": "\\test\\saucedemo.spec.js",
@@ -27,7 +27,7 @@
       "tests": [],
       "suites": [
         {
-          "uuid": "3b0190b4-a124-4ebc-9cd0-2bde26686d75",
+          "uuid": "018efb4b-7d20-4bcc-a71f-4edc7f557d01",
           "title": "Tugas Sesi 9 - Web UI Automation Fundamental",
           "fullFile": "C:\\laragon\\www\\WebUIAutomation\\test\\saucedemo.spec.js",
           "file": "\\test\\saucedemo.spec.js",
@@ -36,7 +36,7 @@
               "title": "\"before all\" hook in \"Tugas Sesi 9 - Web UI Automation Fundamental\"",
               "fullTitle": "Tugas Sesi 9 - Web UI Automation Fundamental \"before all\" hook in \"Tugas Sesi 9 - Web UI Automation Fundamental\"",
               "timedOut": false,
-              "duration": 666,
+              "duration": 1194,
               "state": null,
               "speed": null,
               "pass": false,
@@ -45,8 +45,8 @@
               "context": null,
               "code": "driver = await new Builder().forBrowser('chrome').build();",
               "err": {},
-              "uuid": "992e813d-236d-4d3c-b56d-471355ee9ed0",
-              "parentUUID": "3b0190b4-a124-4ebc-9cd0-2bde26686d75",
+              "uuid": "c65e1d99-e682-40e6-9faf-2dba5a6f62f5",
+              "parentUUID": "018efb4b-7d20-4bcc-a71f-4edc7f557d01",
               "isHook": true,
               "skipped": false
             }
@@ -56,7 +56,7 @@
               "title": "\"after all\" hook in \"Tugas Sesi 9 - Web UI Automation Fundamental\"",
               "fullTitle": "Tugas Sesi 9 - Web UI Automation Fundamental \"after all\" hook in \"Tugas Sesi 9 - Web UI Automation Fundamental\"",
               "timedOut": false,
-              "duration": 5163,
+              "duration": 5654,
               "state": null,
               "speed": null,
               "pass": false,
@@ -65,8 +65,8 @@
               "context": null,
               "code": "await driver.sleep(5000);\nawait driver.quit();",
               "err": {},
-              "uuid": "5464bc3b-99bf-4f89-b677-6f6fbd2b7eb8",
-              "parentUUID": "3b0190b4-a124-4ebc-9cd0-2bde26686d75",
+              "uuid": "f63d966c-da37-4cb5-b59c-89c098f47c0e",
+              "parentUUID": "018efb4b-7d20-4bcc-a71f-4edc7f557d01",
               "isHook": true,
               "skipped": false
             }
@@ -76,7 +76,7 @@
               "title": "Harus sukses login dengan standard_user",
               "fullTitle": "Tugas Sesi 9 - Web UI Automation Fundamental Harus sukses login dengan standard_user",
               "timedOut": false,
-              "duration": 1676,
+              "duration": 912,
               "state": "passed",
               "speed": "slow",
               "pass": true,
@@ -85,8 +85,8 @@
               "context": null,
               "code": "// 1. Buka Website\nawait driver.get('https://www.saucedemo.com');\n// 2. Input Username (Locator ID) \nawait driver.findElement(By.id('user-name')).sendKeys('standard_user');\n// 3. Input Password (Locator ID)\nawait driver.findElement(By.id('password')).sendKeys('secret_sauce');\n// 4. Klik Login Button (Locator ID) \nawait driver.findElement(By.id('login-button')).click();\n// 5. Assertion/Validasi: Pastikan masuk ke halaman inventory \nlet titleElement = await driver.findElement(By.className('title'));\nlet titleText = await titleElement.getText();\n\n// Validasi text harus \"Products\"\nassert.strictEqual(titleText, 'Products');",
               "err": {},
-              "uuid": "6829ae54-e18d-4521-b5bd-2cdf94a2e96c",
-              "parentUUID": "3b0190b4-a124-4ebc-9cd0-2bde26686d75",
+              "uuid": "a505c2ec-9dd5-4261-be5b-d3f33b591445",
+              "parentUUID": "018efb4b-7d20-4bcc-a71f-4edc7f557d01",
               "isHook": false,
               "skipped": false
             },
@@ -94,7 +94,7 @@
               "title": "Harus berhasil mengurutkan produk dari Z-A",
               "fullTitle": "Tugas Sesi 9 - Web UI Automation Fundamental Harus berhasil mengurutkan produk dari Z-A",
               "timedOut": false,
-              "duration": 252,
+              "duration": 241,
               "state": "passed",
               "speed": "slow",
               "pass": true,
@@ -103,21 +103,21 @@
               "context": null,
               "code": "// 1. Klik Dropdown Sort (Locator Class)\nlet sortDropdown = await driver.findElement(By.className('product_sort_container'));\nawait sortDropdown.click();\n// 2. Pilih opsi \"Name (Z to A)\" \nawait driver.findElement(By.css('option[value=\"za\"]')).click();\n// 3. Validasi urutan\n// Ambil nama item pertama setelah di-sort\nlet firstItem = await driver.findElement(By.css('.inventory_item_name')).getText();\n\n// Assertion: Item pertama harus \"Test.allTheThings() T-Shirt (Red)\" \nassert.strictEqual(firstItem, 'Test.allTheThings() T-Shirt (Red)');",
               "err": {},
-              "uuid": "e3b53506-dd28-4076-8185-3914ad619733",
-              "parentUUID": "3b0190b4-a124-4ebc-9cd0-2bde26686d75",
+              "uuid": "e59c8338-9511-4bbf-87ce-a0ae10be1e79",
+              "parentUUID": "018efb4b-7d20-4bcc-a71f-4edc7f557d01",
               "isHook": false,
               "skipped": false
             }
           ],
           "suites": [],
           "passes": [
-            "6829ae54-e18d-4521-b5bd-2cdf94a2e96c",
-            "e3b53506-dd28-4076-8185-3914ad619733"
+            "a505c2ec-9dd5-4261-be5b-d3f33b591445",
+            "e59c8338-9511-4bbf-87ce-a0ae10be1e79"
           ],
           "failures": [],
           "pending": [],
           "skipped": [],
-          "duration": 1928,
+          "duration": 1153,
           "root": false,
           "rootEmpty": false,
           "_timeout": 30000
